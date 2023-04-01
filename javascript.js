@@ -20,4 +20,60 @@ function getComputerChoice(){
 
 }
 
-getComputerChoice()
+function playRound(playerSelection, computerSelection){
+
+    //makes function not case sensitive
+    let playerlowered = playerSelection.toLowerCase();
+    
+    if (playerlowered == "rock"){
+        if (computerSelection == "paper"){
+            console.log("you lose");
+            return "loss";
+        }
+        else if(computerSelection == "rock"){
+            console.log("tie");
+            return "tie";
+        }
+        else if(computerSelection == "scissors"){
+            console.log("win");
+            return "win";
+            
+        }
+    }
+
+
+    else if (playerlowered== "paper"){
+        if (computerSelection == "paper"){
+            console.log("tie");
+            return "";
+        }
+        else if(computerSelection == "rock"){
+            console.log("win");
+            return "";
+        }
+        else if(computerSelection == "scissors"){
+            console.log("loss");
+            return "loss";
+        }
+    }
+
+
+    else if (playerlowered == "scissors"){
+        if (computerSelection == "paper"){
+            console.log("win");
+            return "win";
+        }
+        else if(computerSelection == "rock"){
+            console.log("loss");
+            return "loss";
+        }
+        else if(computerSelection == "scissors"){
+            console.log("tie");
+            return "tie";
+        }
+    }
+    
+}
+
+
+playRound("rock","scissors")
