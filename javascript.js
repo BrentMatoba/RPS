@@ -22,6 +22,8 @@ function playRound(playerSelection, computerSelection){
     //makes function not case sensitive
     let playerlowered = playerSelection.toLowerCase();
     
+
+    //Determines if player wins/loses/ties, returns rounds result
     if (playerlowered == "rock"){
         if (computerSelection == "paper"){
             console.log("lose");
@@ -74,18 +76,26 @@ function playRound(playerSelection, computerSelection){
 
 
 function game(){
+    //executes a best of 5 game of rock, paper, scissors between the user
+    //and the computer
+
+
+
+    //score variables
     let playerPoints = 0
     let computerPoints = 0
 
+    //for loop for five iterations
     for (let i=0; i<5; i++){
 
-
+        //gets player and computer choices
         let computerSelection = getComputerChoice();
         let playerSelection = prompt()
 
-
+        //assigns round result to a variable
         let result = playRound(playerSelection, computerSelection)
 
+        //changes player or computer score based on round result
         if (result == "win"){
             playerPoints+=1
         }
@@ -94,7 +104,7 @@ function game(){
         }
     }
     
-
+    //determines who is the ultimate winner
     if (playerPoints > computerPoints){
         alert("You win!")
     }
@@ -107,4 +117,6 @@ function game(){
 
 
 }
+
 game()
+//calls game
